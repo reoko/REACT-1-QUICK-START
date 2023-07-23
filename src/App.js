@@ -26,6 +26,7 @@ export default function MyApp() {
  * Displaying Data
  */
 
+/*
 const user = {
   name: 'Hedy Lamarr',
   imageUrl: 'https://i.imgur.com/yXOvdOSs.jpg',
@@ -48,3 +49,73 @@ export default function Profile() {
     </React.Fragment>
   );
 }
+
+*/
+
+/**
+ * Conditional Rendering
+ */
+
+function AdminPannel() {
+  return (
+    <h1>The Admin Panel</h1>
+  );
+}
+
+function LoginForm() {
+  return (
+    <h1>The Log-In Form</h1>
+  );
+}
+
+export default function Page() {
+  let content;
+  var isLoggedIn = true;
+
+  // Start - Long method
+  /*
+  if (isLoggedIn) {
+    content = <AdminPannel />
+  } else {  
+    content = <LoginForm />
+  }
+
+  return (
+    <React.Fragment>
+      <div>
+        {content}
+      </div>
+    </React.Fragment>
+  );
+  */
+  // End - Long Method
+
+
+  // Start - Compact Method
+  /*
+  return (
+    <React.Fragment>
+      <div>
+        {isLoggedIn ? (
+          <AdminPannel />
+        ) : (
+          <LoginForm />
+        )}
+      </div>
+    </React.Fragment>
+  );
+  */
+  // End - Compact Method
+
+
+  // Start - No need of 'else' branch
+  return (
+    <React.Fragment>
+      <div>
+        { isLoggedIn &&  <AdminPannel /> }
+      </div>
+    </React.Fragment>
+  );
+  // End - No need of 'else' branch
+}
+
