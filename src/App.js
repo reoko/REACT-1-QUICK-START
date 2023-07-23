@@ -22,6 +22,9 @@ export default function MyApp() {
 }
 */
 
+/**
+ * Displaying Data
+ */
 
 const user = {
   name: 'Hedy Lamarr',
