@@ -1,4 +1,6 @@
 import React from 'react';
+/* 
+* Inital code
 
 function MyButton() {
   return (
@@ -10,9 +12,36 @@ function MyButton() {
 
 export default function MyApp() {
   return (
-    <div>
-      <h1>Welcome to my app</h1>
-      <MyButton />
-    </div>
+    <React.Fragment>
+      <div>
+        <h1>Welcome to my app</h1>
+        <MyButton />
+      </div>
+    </React.Fragment>
+  );
+}
+*/
+
+
+const user = {
+  name: 'Hedy Lamarr',
+  imageUrl: 'https://i.imgur.com/yXOvdOSs.jpg',
+  imageSize: 90,
+};
+
+export default function Profile() {
+  return (
+    <React.Fragment>
+      <h1>{user.name}</h1>
+      <img
+        className="avatar"
+        src={user.imageUrl}
+        alt={'Photo of' + user.name}
+        style={{
+          width: user.imageSize,
+          height: user.imageSize
+        }}
+      />
+    </React.Fragment>
   );
 }
