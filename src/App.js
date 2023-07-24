@@ -190,6 +190,7 @@ export default function Page() {
     <React.Fragment>
       <div>
         <MyButton2 />
+        <MyButton2 />
       </div>
     </React.Fragment>
   );
