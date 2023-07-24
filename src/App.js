@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 /* 
 * Inital code
 
@@ -55,7 +55,7 @@ export default function Profile() {
 /**
  * Conditional Rendering
  */
-
+/*
 function AdminPannel() {
   return (
     <h1>The Admin Panel</h1>
@@ -67,12 +67,14 @@ function LoginForm() {
     <h1>The Log-In Form</h1>
   );
 }
+*/
 
 /**
  *  Start - Responding to Events
  */
-
+/*
 function MyButton() {
+
   function handleClick() {
     alert('You clicked me!');
   }
@@ -83,9 +85,33 @@ function MyButton() {
     </button>
   );
 }
-
+*/
 /**
  *  End - Responding to Events
+ */
+
+
+/**
+ *  Start - Updating the Screen
+ */
+
+function MyButton2() {
+
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+  return (
+    <button onClick={handleClick} >
+      Click {count} times
+    </button>
+  );
+}
+
+/**
+ *  End - Updating the Screen
  */
 
 export default function Page() {
@@ -143,7 +169,7 @@ export default function Page() {
   /**
    *  Start - Responding to Events
    */
-
+  /*
   return (
     <React.Fragment>
       <div>
@@ -151,9 +177,25 @@ export default function Page() {
       </div>
     </React.Fragment>
   );
-
+    */
   /**
    *  End - Responding to Events
+   */
+
+  /**
+   *  Start - Updating the Screen
+   */
+
+  return (
+    <React.Fragment>
+      <div>
+        <MyButton2 />
+      </div>
+    </React.Fragment>
+  );
+
+  /**
+   *  End - Updating the Screen
    */
 }
 
