@@ -94,7 +94,7 @@ function MyButton() {
 /**
  *  Start - Updating the Screen
  */
-
+/*
 function MyButton2() {
 
   const [count, setCount] = useState(0);
@@ -109,10 +109,29 @@ function MyButton2() {
     </button>
   );
 }
-
+*/
 /**
  *  End - Updating the Screen
  */
+
+
+/**
+ *  Start - Sharing Data Between Components
+ */
+
+function MyButton3({ count, onClick }) {
+  return (
+    <button onClick={onClick} >
+      Click {count} times
+    </button>
+  );
+}
+
+/**
+ *  End - Sharing Data Between Components
+ */
+
+
 
 export default function Page() {
   //let content;
@@ -137,6 +156,7 @@ export default function Page() {
   // End - Long Method
 
 
+
   // Start - Compact Method
   /*
   return (
@@ -154,6 +174,7 @@ export default function Page() {
   // End - Compact Method
 
 
+
   // Start - No need of 'else' branch
   /*
   return (
@@ -165,6 +186,8 @@ export default function Page() {
   );
   */
   // End - No need of 'else' branch
+
+
 
   /**
    *  Start - Responding to Events
@@ -182,10 +205,12 @@ export default function Page() {
    *  End - Responding to Events
    */
 
+
+
   /**
    *  Start - Updating the Screen
    */
-
+  /*
   return (
     <React.Fragment>
       <div>
@@ -194,9 +219,35 @@ export default function Page() {
       </div>
     </React.Fragment>
   );
-
+  */
   /**
    *  End - Updating the Screen
+   */
+
+
+
+  /**
+   *  Start - Sharing Data Between Components
+   */
+  
+  const [count, setCount] = useState(0);
+  
+  function handleClick() {
+    setCount(count + 1);
+  }
+  
+  return (
+    <React.Fragment>
+      <div>
+        <h1>Counters that update together</h1>
+        <MyButton3 count={count} onClick={handleClick} />
+        <MyButton3 count={count} onClick={handleClick} />
+      </div>
+    </React.Fragment>
+  );
+  
+  /**
+   *  End - Sharing Data Between Components
    */
 }
 
