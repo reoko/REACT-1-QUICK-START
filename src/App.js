@@ -68,9 +68,29 @@ function LoginForm() {
   );
 }
 
+/**
+ *  Start - Responding to Events
+ */
+
+function MyButton() {
+  function handleClick() {
+    alert('You clicked me!');
+  }
+
+  return (
+    <button onClick={handleClick} >
+      Click Me
+    </button>
+  );
+}
+
+/**
+ *  End - Responding to Events
+ */
+
 export default function Page() {
-  let content;
-  var isLoggedIn = true;
+  //let content;
+  //var isLoggedIn = true;
 
   // Start - Long method
   /*
@@ -109,6 +129,7 @@ export default function Page() {
 
 
   // Start - No need of 'else' branch
+  /*
   return (
     <React.Fragment>
       <div>
@@ -116,6 +137,23 @@ export default function Page() {
       </div>
     </React.Fragment>
   );
+  */
   // End - No need of 'else' branch
+
+  /**
+   *  Start - Responding to Events
+   */
+
+  return (
+    <React.Fragment>
+      <div>
+        <MyButton />
+      </div>
+    </React.Fragment>
+  );
+
+  /**
+   *  End - Responding to Events
+   */
 }
 
